@@ -1,15 +1,15 @@
 syntax enable
 set number
-set numberwidth = 1
-set mouse = a
+set numberwidth=1
+set mouse=a
 set clipboard=unnamed
 set showcmd
 set ruler
 set encoding=utf-8
 set showmatch
-set sw = 2
+set sw=2
 set relativenumber
-set laststatus 2
+set laststatus=2
 set noshowmode
 call plug#begin('~\vimfiles\plugged')
 "temas"
@@ -39,7 +39,6 @@ nmap <Leader>nt :NERDTreeFind<CR>
 nmap <leader>wq :wq <CR>
 nmap <leader>w :w <CR>
 nmap <leader>q :q <CR>
-
 "coc config"
 
 " TextEdit might fail if hidden is not set.
