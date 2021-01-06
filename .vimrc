@@ -11,7 +11,7 @@ set sw=2
 set relativenumber
 set laststatus=2
 set noshowmode
-call plug#begin('~\vimfiles\plugged')
+call plug#begin('~/vimfiles/plugged')
 "temas"
 
 Plug 'morhetz/gruvbox'
