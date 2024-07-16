@@ -40,10 +40,11 @@ vim.keymap.set("n", "<leader>mr", "<cmd>CellularAutomaton make_it_rain<CR>");
 vim.keymap.set("n", "<leader><leader>", function()
     vim.cmd("so")
 end)
+-- Emacs like saves and stuff
+vim.keymap.set("n", "<leader>fs", ":w<CR>");
 vim.keymap.set("n", "<leader>wq", ":wq<CR>")
-vim.keymap.set("n", "<leader>w", ":w<CR>")
 
---#Window navigation
+--Window navigation
 vim.keymap.set("n", "<leader>wh", "<C-W>n")
 vim.keymap.set("n", "<leader>wv", "<C-W>v")
 
@@ -52,4 +53,3 @@ vim.keymap.set("n", "J", "<C-W>j")
 vim.keymap.set("n", "K", "<C-W>k")
 vim.keymap.set("n", "L", "<C-W>l")
 vim.keymap.set("n", "<leader>wc", ":q<CR>")
-

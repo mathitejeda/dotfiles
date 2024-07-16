@@ -12,6 +12,9 @@ end
 vim.opt.rtp:prepend(lazypath)
 
 require("lazy").setup({
-    spec = "mathi.lazy",
+    spec = {
+        { import = "mathi.lazy" },
+        {import = "mathi.lazy.orgmode"},
+    },
     change_detection = { notify = false }
 })
