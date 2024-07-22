@@ -1,0 +1,7 @@
+# -*- mode: snippet -*-
+# name: dump
+# uuid: dump
+# key: dump
+# condition: t
+# --
+warn Data::Dumper->Dump([${1:var}], [qw/${2:desc}/]);
