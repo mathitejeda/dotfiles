@@ -45,16 +45,18 @@ vim.keymap.set("n", "<leader>fs", ":w<CR>");
 vim.keymap.set("n", "<leader>wq", ":wq<CR>")
 
 --Window navigation
-vim.keymap.set("n", "<leader>wh", "<C-W>n")
-vim.keymap.set("n", "<leader>wv", "<C-W>v")
+vim.keymap.set("n", "<leader>wh", "<C-W>n", {desc = "nueva ventana horizontal"})
+vim.keymap.set("n", "<leader>wv", "<C-W>v", {desc = "nueva ventana vertical"})
 
 vim.keymap.set("n", "H", "<C-W>h")
 vim.keymap.set("n", "J", "<C-W>j")
 vim.keymap.set("n", "K", "<C-W>k")
 vim.keymap.set("n", "L", "<C-W>l")
-vim.keymap.set("n", "<leader>wc", ":q<CR>")
+vim.keymap.set("n", "<leader>wc", ":q<CR>", {desc = "Cerrar ventana"})
 
-vim.keymap.set("n", "<leader>bn", ":bnext<CR>")
-vim.keymap.set("n", "<leader>bp", ":bprev<CR>")
-vim.keymap.set("n", "<leader>bk", ":bdelete<CR>")
+-- buffers ketys
+
+vim.keymap.set("n", "<leader>bn", ":bnext<CR>", {desc = "goto next buffer"}) -- next buffer
+vim.keymap.set("n", "<leader>bp", ":bprev<CR>", {desc = "goto prev buffer"}) -- previous buffer
+vim.keymap.set("n", "<leader>bk", ":bdelete<CR>", {desc = "kill current buffer"} ) -- kill current buffer
 
