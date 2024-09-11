@@ -21,5 +21,8 @@ return {
         vim.keymap.set('n', '<leader>ps', function()
             builtin.grep_string({ search = vim.fn.input("Grep > ") })
         end)
+
+		vim.keymap.set('n', '<leader>ss', builtin.lsp_document_symbols, {desc = "Search symbols on file"});
+		vim.keymap.set('n', '<leader>sS', builtin.lsp_document_symbols, {desc = "Search symbols on workspace"});
     end
 }
