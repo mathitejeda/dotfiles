@@ -60,3 +60,5 @@ vim.keymap.set("n", "<leader>bn", ":bnext<CR>", {desc = "goto next buffer"}) -- 
 vim.keymap.set("n", "<leader>bp", ":bprev<CR>", {desc = "goto prev buffer"}) -- previous buffer
 vim.keymap.set("n", "<leader>bk", ":bdelete<CR>", {desc = "kill current buffer"} ) -- kill current buffer
 
+vim.keymap.set("n", "<leader>/", "gcc", {desc = "toggle comment", remap = true})
+vim.keymap.set("v", "<leader>/", "gc", {desc = "toggle comment", remap = true})
