@@ -38,27 +38,36 @@ vim.keymap.set("n", "<leader>vpp", "<cmd>e ~/.dotfiles/nvim/.config/nvim/lua/mat
 vim.keymap.set("n", "<leader>mr", "<cmd>CellularAutomaton make_it_rain<CR>");
 
 vim.keymap.set("n", "<leader><leader>", function()
-    vim.cmd("so")
+	vim.cmd("so")
 end)
 -- Emacs like saves and stuff
 vim.keymap.set("n", "<leader>fs", ":w<CR>");
 vim.keymap.set("n", "<leader>wq", ":wq<CR>")
 
 --Window navigation
-vim.keymap.set("n", "<leader>wh", "<C-W>n", {desc = "nueva ventana horizontal"})
-vim.keymap.set("n", "<leader>wv", "<C-W>v", {desc = "nueva ventana vertical"})
+vim.keymap.set("n", "<leader>wh", "<C-W>n", { desc = "nueva ventana horizontal" })
+vim.keymap.set("n", "<leader>wv", "<C-W>v", { desc = "nueva ventana vertical" })
 
 vim.keymap.set("n", "H", "<C-W>h")
 vim.keymap.set("n", "J", "<C-W>j")
 vim.keymap.set("n", "K", "<C-W>k")
 vim.keymap.set("n", "L", "<C-W>l")
-vim.keymap.set("n", "<leader>wc", ":q<CR>", {desc = "Cerrar ventana"})
+vim.keymap.set("n", "<leader>wc", ":q<CR>", { desc = "Cerrar ventana" })
 
 -- buffers ketys
 
-vim.keymap.set("n", "<leader>bn", ":bnext<CR>", {desc = "goto next buffer"}) -- next buffer
-vim.keymap.set("n", "<leader>bp", ":bprev<CR>", {desc = "goto prev buffer"}) -- previous buffer
-vim.keymap.set("n", "<leader>bk", ":bdelete<CR>", {desc = "kill current buffer"} ) -- kill current buffer
+vim.keymap.set("n", "<leader>bn", ":bnext<CR>", { desc = "goto next buffer" })     -- next buffer
+vim.keymap.set("n", "<leader>bp", ":bprev<CR>", { desc = "goto prev buffer" })     -- previous buffer
+vim.keymap.set("n", "<leader>bk", ":bdelete<CR>", { desc = "kill current buffer" }) -- kill current buffer
 
-vim.keymap.set("n", "<leader>/", "gcc", {desc = "toggle comment", remap = true})
-vim.keymap.set("v", "<leader>/", "gc", {desc = "toggle comment", remap = true})
+vim.keymap.set("n", "<leader>/", "gcc", { desc = "toggle comment", remap = true })
+vim.keymap.set("v", "<leader>/", "gc", { desc = "toggle comment", remap = true })
+
+-- copilot keys
+
+vim.keymap.set('i', '<C-y>', 'copilot#Accept("\\<CR>")', {
+	expr = true,
+	replace_keycodes = false
+})
+vim.g.copilot_no_tab_map = true
+vim.keymap.set('i', '<C-S-y>', '<Plug>(copilot-accept-word)')
