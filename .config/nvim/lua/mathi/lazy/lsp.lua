@@ -65,7 +65,7 @@ return {
 							luasnip.expand()
 						else
 							cmp.confirm({
-								select = true,
+								select = false,
 							})
 						end
 					else
