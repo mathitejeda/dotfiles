@@ -71,3 +71,6 @@ vim.keymap.set('i', '<C-y>', 'copilot#Accept("\\<CR>")', {
 })
 vim.g.copilot_no_tab_map = true
 vim.keymap.set('i', '<C-S-y>', '<Plug>(copilot-accept-word)')
+
+-- exit terminal
+vim.keymap.set("t", "<C-q>", "<C-\\><C-n>")
