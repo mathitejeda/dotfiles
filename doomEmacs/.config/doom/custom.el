@@ -13,7 +13,7 @@
    ["/epl/src/perl/perl" "/epl/src/admin/perl" "/epl/src/devel/perl" "/epl/src/adserver/tests" "/epl/src/admin/tests/admin" "/epl/src/admin/tests/api" "/epl/src/adserver/tests" "/epl/src/formatos/tests"])
  '(magit-todos-insert-after '(bottom) nil nil "Changed by setter of obsolete option `magit-todos-insert-at'")
  '(org-agenda-files '("~/org/" "~/notes/trabajo"))
- '(package-selected-packages '(ripgrep nerd-icons rg perl-doc))
+ '(package-selected-packages '(org-roam ripgrep nerd-icons rg perl-doc))
  '(vterm-shell "/bin/fish")
  '(vterm-tramp-shells '(("docker" "/bin/bash"))))
 (custom-set-faces
