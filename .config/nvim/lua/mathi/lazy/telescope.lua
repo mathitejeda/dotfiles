@@ -14,6 +14,7 @@ return {
                 buffers = {
                     ignore_current_buffer = true,
                     sort_lastused = true,
+					theme = "ivy"
                 }
             }
         })
