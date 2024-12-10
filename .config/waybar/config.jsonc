@@ -85,6 +85,7 @@
 	"clock": {
 		"timezone": "America/Argentina/Buenos_Aires",
 		"tooltip-format": "<big>{:%Y %B}</big>\n<tt><small>{calendar}</small></tt>",
+		"format": "{:%H:%M}",
 		"format-alt": "{:%Y-%m-%d}"
 	},
 	"cpu": {
