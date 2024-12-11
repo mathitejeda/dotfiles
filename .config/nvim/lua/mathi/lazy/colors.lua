@@ -12,7 +12,10 @@ return {
 		name = 'rose-pine',
 		config = function()
 			require('rose-pine').setup({
-				disable_background = true,
+				disable_backfalseground = true,
+				styles = {
+					transparency = true,
+				}
 			})
 		end
 	},
@@ -21,7 +24,7 @@ return {
 		name = 'doom-one',
 		setup = function()
 			-- Add color to cursor
-			vim.g.doom_one_cursor_coloring = false
+			vim.g.doom_one_cursor_coloring = true
 			-- Set :terminal colors
 			vim.g.doom_one_terminal_colors = true
 			-- Enable italic comments
@@ -31,7 +34,7 @@ return {
 			-- Color whole diagnostic text or only underline
 			vim.g.doom_one_diagnostics_text_color = false
 			-- Enable transparent background
-			vim.g.doom_one_transparent_background = false
+			vim.g.doom_one_transparent_background = true
 
 			-- Pumblend transparency
 			vim.g.doom_one_pumblend_enable = false
@@ -40,7 +43,7 @@ return {
 			-- Plugins integration
 			vim.g.doom_one_plugin_neorg = true
 			vim.g.doom_one_plugin_barbar = false
-			vim.g.doom_one_plugin_telescope = false
+			vim.g.doom_one_plugin_telescope = true
 			vim.g.doom_one_plugin_neogit = true
 			vim.g.doom_one_plugin_nvim_tree = true
 			vim.g.doom_one_plugin_dashboard = true
