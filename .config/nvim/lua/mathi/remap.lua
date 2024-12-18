@@ -24,7 +24,6 @@ vim.keymap.set("i", "<C-c>", "<Esc>")
 
 vim.keymap.set("n", "Q", "<nop>")
 vim.keymap.set("n", "<C-f>", "<cmd>silent !tmux neww tmux-sessionizer<CR>")
-vim.keymap.set("n", "<leader>f", vim.lsp.buf.format)
 
 vim.keymap.set("n", "<C-k>", "<cmd>cnext<CR>zz")
 vim.keymap.set("n", "<C-j>", "<cmd>cprev<CR>zz")
@@ -56,8 +55,8 @@ vim.keymap.set("n", "<leader>wc", ":q<CR>", { desc = "Cerrar ventana" })
 
 -- buffers ketys
 
-vim.keymap.set("n", "<leader>bn", ":bnext<CR>", { desc = "goto next buffer" })     -- next buffer
-vim.keymap.set("n", "<leader>bp", ":bprev<CR>", { desc = "goto prev buffer" })     -- previous buffer
+vim.keymap.set("n", "<leader>bn", ":bnext<CR>", { desc = "goto next buffer" })      -- next buffer
+vim.keymap.set("n", "<leader>bp", ":bprev<CR>", { desc = "goto prev buffer" })      -- previous buffer
 vim.keymap.set("n", "<leader>bk", ":bdelete<CR>", { desc = "kill current buffer" }) -- kill current buffer
 
 vim.keymap.set("n", "<leader>/", "gcc", { desc = "toggle comment", remap = true })
@@ -74,3 +73,6 @@ vim.keymap.set('i', '<C-S-y>', '<Plug>(copilot-accept-word)')
 
 -- exit terminal
 vim.keymap.set("t", "<C-q>", "<C-\\><C-n>")
+
+vim.keymap.set('v', '<Leader>f', vim.lsp.buf.format, bufopts)
+vim.keymap.set("n", "<leader>f", vim.lsp.buf.format)
