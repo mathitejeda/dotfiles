@@ -1,7 +1,0 @@
-# -*- mode: snippet -*-
-# name: tests
-# uuid: tests
-# key: tests
-# condition: t
-# --
-our @TESTS = qw/${1:module}/;
