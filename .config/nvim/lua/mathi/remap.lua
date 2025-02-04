@@ -73,6 +73,24 @@ vim.keymap.set('i', '<C-S-y>', '<Plug>(copilot-accept-word)')
 
 -- exit terminal
 vim.keymap.set("t", "<C-q>", "<C-\\><C-n>")
+vim.keymap.set("n", "<space>ot", function()
+	vim.cmd.vnew()
+	vim.cmd.term()
+	vim.cmd.wincmd("J")
+	vim.cmd("startinsert")
+	vim.api.nvim_win_set_height(0, 10)
+end)
+
+vim.api.nvim_create_autocmd("TermOpen", {
+	group = vim.api.nvim_create_augroup("custom-term-open", { clear = true }),
+	callback = function()
+		vim.opt.number = false
+		vim.opt.relativenumber = false
+	end,
+})
 
 vim.keymap.set('v', '<Leader>f', vim.lsp.buf.format, bufopts)
 vim.keymap.set("n", "<leader>f", vim.lsp.buf.format)
+
+-- mini files
+vim.keymap.set("n", "<leader>of", "<cmd>lua MiniFiles.open()<CR>", { desc = "mini files" })
