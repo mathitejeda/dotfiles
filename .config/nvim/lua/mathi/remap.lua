@@ -54,7 +54,6 @@ vim.keymap.set("n", "L", "<C-W>l")
 vim.keymap.set("n", "<leader>wc", ":q<CR>", { desc = "Cerrar ventana" })
 
 -- buffers ketys
-
 vim.keymap.set("n", "<leader>bn", ":bnext<CR>", { desc = "goto next buffer" })      -- next buffer
 vim.keymap.set("n", "<leader>bp", ":bprev<CR>", { desc = "goto prev buffer" })      -- previous buffer
 vim.keymap.set("n", "<leader>bk", ":bdelete<CR>", { desc = "kill current buffer" }) -- kill current buffer
@@ -63,7 +62,6 @@ vim.keymap.set("n", "<leader>/", "gcc", { desc = "toggle comment", remap = true 
 vim.keymap.set("v", "<leader>/", "gc", { desc = "toggle comment", remap = true })
 
 -- copilot keys
-
 vim.keymap.set('i', '<C-y>', 'copilot#Accept("\\<CR>")', {
 	expr = true,
 	replace_keycodes = false
