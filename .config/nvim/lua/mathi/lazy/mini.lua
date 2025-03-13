@@ -9,5 +9,6 @@ return {
 		require('mini.comment').setup()
 		require('mini.indentscope').setup()
 		require('mini.files').setup()
+		require('mini.diff').setup()
 	end
 }

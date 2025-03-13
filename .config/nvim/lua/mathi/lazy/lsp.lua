@@ -11,6 +11,7 @@ return {
 		"L3MON4D3/LuaSnip",
 		"saadparwaiz1/cmp_luasnip",
 		"j-hui/fidget.nvim",
+		"hrsh7th/cmp-nvim-lsp-signature-help"
 	},
 
 	config = function()
@@ -53,6 +54,7 @@ return {
 		})
 
 		cmp.setup({
+			preselect = cmp.PreselectMode.None,
 			snippet = {
 				expand = function(args)
 					require('luasnip').lsp_expand(args.body)
@@ -61,18 +63,14 @@ return {
 			mapping = cmp.mapping.preset.insert({
 				['<CR>'] = cmp.mapping(function(fallback)
 					if cmp.visible() then
-						if luasnip.expandable() then
-							luasnip.expand()
-						else
-							cmp.confirm({
-								select = false,
-							})
-						end
+						cmp.confirm({
+							select = false,
+						})
 					else
 						fallback()
 					end
 				end),
-				["<Tab>"] = cmp.mapping(function(fallback)
+				["C-n"] = cmp.mapping(function(fallback)
 					if cmp.visible() then
 						cmp.select_next_item()
 					elseif luasnip.locally_jumpable(1) then
@@ -81,7 +79,7 @@ return {
 						fallback()
 					end
 				end, { "i", "s" }),
-				["<S-Tab>"] = cmp.mapping(function(fallback)
+				["<C-p>"] = cmp.mapping(function(fallback)
 					if cmp.visible() then
 						cmp.select_prev_item()
 					elseif luasnip.locally_jumpable(-1) then
@@ -94,7 +92,8 @@ return {
 			sources = cmp.config.sources({
 				{ name = 'nvim_lsp' },
 				{ name = 'luasnip' },
-				{ name = 'treesitter' }
+				{ name = 'treesitter' },
+				{ name = 'nvim_lsp_signature_help' }
 			}, {
 				{ name = 'buffer' },
 			})
