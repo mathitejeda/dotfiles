@@ -52,6 +52,10 @@ link-config-hypr:
 	@echo "Enlazando configuración de Hyprland..."
 	ln -sfn $(DOTFILES_DIR)/hypr $(CONFIG_DIR)/hypr
 
+link-config-doom:
+	@echo "Enlazando configuración de Doom Emacs..."
+	ln -sfn $(DOTFILES_DIR)/doom $(HOME)/.doom.d
+
 # Limpiar enlaces simbólicos
 clean:
 	@echo "Limpiando enlaces simbólicos..."
@@ -71,5 +75,6 @@ tmux: link-config-tmux
 kitty: link-config-kitty
 waybar: link-config-waybar
 hypr: link-config-hypr
+doom: link-config-doom
 
 .PHONY: install-packages install-tmux-plugins link-config-nvim link-config-fish link-config-tmux link-config-kitty link-config-waybar link-config-hypr clean all link nvim fish tmux kitty waybar hypr
