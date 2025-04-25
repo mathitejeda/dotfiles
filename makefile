@@ -38,7 +38,7 @@ link-config-fish:
 
 link-config-tmux:
 	@echo "Enlazando configuración de Tmux..."
-	ln -sfn $(DOTFILES_DIR)/tmux $(HOME)/.tmux
+	ln -sfn $(DOTFILES_DIR)/.tmux.conf $(HOME)/.tmux.conf
 
 link-config-kitty:
 	@echo "Enlazando configuración de Kitty..."
