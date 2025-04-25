@@ -7,4 +7,6 @@ if status is-interactive
 	abbr tn 'tmux new -s'
 	abbr tk 'tmux kill-session -t'
 	abbr tkss 'tmux kill-server'
+
+	fzf --fish | source
 end
