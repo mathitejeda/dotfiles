@@ -6,7 +6,7 @@ CONFIG_DIR := $(HOME)/.config
 
 # Paquetes por instalar (para sistemas basados en apt o pacman)
 APT_PACKAGES := hyprland waybar fish neovim tmux kitty stow rofi-wayland
-PACMAN_PACKAGES := hyprland waybar fish neovim tmux kitty stow rofi-wayland
+PACMAN_PACKAGES := hyprland waybar fish neovim tmux kitty stow rofi-wayland hyprpaper
 
 # Instalar paquetes dependiendo del gestor de paquetes
 install-packages:
