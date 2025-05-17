@@ -5,8 +5,9 @@ DOTFILES_DIR := $(shell pwd)
 CONFIG_DIR := $(HOME)/.config
 
 # Paquetes por instalar (para sistemas basados en apt o pacman)
-APT_PACKAGES := hyprland waybar fish neovim tmux kitty stow rofi-wayland
-PACMAN_PACKAGES := hyprland waybar fish neovim tmux kitty stow rofi-wayland hyprpaper
+APT_PACKAGES := hyprland waybar fish neovim tmux ghostty stow rofi-wayland
+PACMAN_PACKAGES := hyprland waybar fish neovim tmux ghostty stow rofi-wayland hyprpaper docker postgresql
+DNF_PACKAGES := hyprland waybar fish neovim tmux ghostty stow rofi-wayland hyprpaper docker postgresql git curl wget
 
 # Instalar paquetes dependiendo del gestor de paquetes
 install-packages:
