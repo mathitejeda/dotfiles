@@ -18,6 +18,9 @@ install-packages:
 	elif command -v pacman >/dev/null 2>&1; then \
 		sudo pacman -Syu && \
 		sudo pacman -S --noconfirm $(PACMAN_PACKAGES); \
+	elif command -v dnf >/dev/null 2>&1; then \
+		sudo dnf update && \
+		sudo dnf install -y $(DNF_PACKAGES) \
 	else \
 		echo "Gestor de paquetes no soportado"; \
 		exit 1; \

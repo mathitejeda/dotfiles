@@ -4,6 +4,7 @@ if status is-interactive
 
 	# add gopath
 	set -x GOPATH $HOME/go
+	set -x DOOM $HOME/.config/emacs/bin
 	set -x PATH $PATH $GOPATH/bin
 
 	#tmux abbrs
