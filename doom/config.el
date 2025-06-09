@@ -103,3 +103,51 @@
 (use-package templ-ts-mode
   :ensure t
   :mode ("\\.templ\\'" . templ-ts-mode))
+
+;; Org-mode visual tweaks
+(after! org
+  (setq org-hide-emphasis-markers t
+        org-startup-indented t
+        org-startup-folded 'showeverything
+        org-ellipsis " ▾"
+        org-hide-leading-stars t)
+
+  (add-hook 'org-mode-hook #'org-modern-mode)
+  (add-hook 'org-mode-hook #'visual-line-mode)
+  (add-hook 'org-mode-hook #'variable-pitch-mode)
+  (add-hook 'org-mode-hook #'org-appear-mode)
+
+  ;; Mostrar/ocultar énfasis y links solo en modo insert
+  (defun my/org-appear-activate ()
+    (when (derived-mode-p 'org-mode)
+      (org-appear--set-elements-visible t)))
+
+  (defun my/org-appear-deactivate ()
+    (when (derived-mode-p 'org-mode)
+      (org-appear--set-elements-visible nil)))
+
+  (add-hook 'evil-insert-state-entry-hook #'my/org-appear-activate)
+  (add-hook 'evil-insert-state-exit-hook  #'my/org-appear-deactivate))
+
+;; Config de org-appear
+(use-package! org-appear
+  :hook (org-mode . org-appear-mode)
+  :config
+  (setq org-appear-autoemphasis t
+        org-appear-autolinks t
+        org-appear-autosubmarkers t))
+
+;; Usa org-modern para íconos más lindos y bullets bonitos
+(use-package! org-modern
+  :config
+  (setq org-modern-hide-stars nil
+        org-modern-star ["◉" "○" "✸" "✿"]
+        org-modern-list '((43 . "•") (45 . "–") (42 . "◦")))) ; +, -, *
+
+;; Desactivar números en org, pero mantenerlos relativos en programación
+(add-hook! org-mode (setq display-line-numbers nil))
+(add-hook! prog-mode (setq display-line-numbers 'relative))
+
+;; Opcional: fuente proporcional para texto org (más estético)
+(set-face-attribute 'variable-pitch nil :family "Cantarell" :height 160)
+(set-face-attribute 'fixed-pitch nil :family "FiraCode Nerd Font" :height 140)
