@@ -126,7 +126,7 @@ return {
 						'/epl/src/formatos/tests'
 					},
 					enableWarnings = true,
-					perltidyProfile = '/epl/src/devel/scripts/perltidyrc',
+					-- perltidyProfile = '/epl/src/devel/scripts/perltidyrc',
 					perlcriticProfile = '',
 					perlcriticEnabled = true,
 					perlimportsLintEnabled = true,

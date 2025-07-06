@@ -108,7 +108,7 @@
 (after! org
   (setq org-hide-emphasis-markers t
         org-startup-indented t
-        org-startup-folded 'showeverything
+        org-startup-folded 'overview
         org-ellipsis " ▾"
         org-hide-leading-stars t)
 
@@ -147,6 +147,7 @@
 ;; Desactivar números en org, pero mantenerlos relativos en programación
 (add-hook! org-mode (setq display-line-numbers nil))
 (add-hook! prog-mode (setq display-line-numbers 'relative))
+(set-face-attribute 'org-table nil  :inherit 'fixed-pitch)
 
 ;; Opcional: fuente proporcional para texto org (más estético)
 (set-face-attribute 'variable-pitch nil :family "Cantarell" :height 160)

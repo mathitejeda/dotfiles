@@ -18,7 +18,6 @@ return {
 			require("which-key").add({
 				{ "<leader>f", group = "File" },
 				{ "<leader>b", group = "Buffer" },
-				{ "<leader>bb", "<cmd>lua Snacks.picker.buffers()<cr>", desc = "buffers list"},
 				{ "<leader>g", group = "Git" },
 				{ "<leader>go", "<cmd>lua MiniDiff.toggle_overlay()<cr>", desc = "Git toggle overlay" },
 			})
