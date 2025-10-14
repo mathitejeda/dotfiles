@@ -14,6 +14,7 @@
 	],
 	"modules-right": [
 		"tray",
+		"bluetooth",
 		"pulseaudio",
 		"custom/power"
 	],
@@ -165,24 +166,25 @@
 		"format-disconnected": "Disconnected ⚠",
 		"format-alt": "{ifname}: {ipaddr}/{cidr}"
 	},
-	"pulseaudio": {
-		"format": "{volume}% {icon}",
-		"format-icons": {
-			"headphone": "",
-			"hands-free": "",
-			"headset": "",
-			"phone": "",
-			"portable": "",
-			"car": "",
-			"default": [
-				"",
-				"",
-				""
-			]
-		},
-		"on-click": "pavucontrol"
-	},
-	"custom/media": {
+  "bluetooth": {
+    "format": "",
+    "format-disabled": "󰂲",
+    "format-connected": "",
+    "tooltip-format": "Devices connected: {num_connections}",
+    "on-click": "blueberry"
+  },
+  "pulseaudio": {
+    "format": "{icon}",
+    "on-click": "ghostty --class=Wiremix -e wiremix",
+    "on-click-right": "pamixer -t",
+    "tooltip-format": "Playing at {volume}%",
+    "scroll-step": 5,
+    "format-muted": "",
+    "format-icons": {
+      "default": ["", "", ""]
+    }
+  },
+  "custom/media": {
 		"format": "{icon} {}",
 		"return-type": "json",
 		"max-length": 40,

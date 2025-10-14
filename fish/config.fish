@@ -3,9 +3,12 @@ if status is-interactive
 	set -g fish_key_bindings fish_vi_key_bindings
 
 	# add gopath
+	set -gx EDITOR nvim
 	set -x GOPATH $HOME/go
 	set -x DOOM $HOME/.config/emacs/bin
 	set -x PATH $PATH $GOPATH/bin
+	set -x PATH $PATH $HOME/.opencode/bin
+	set -x PATH $PATH $HOME/.fly/bin
 
 	#tmux abbrs
 	abbr tl 'tmux ls'
@@ -15,4 +18,5 @@ if status is-interactive
 	abbr tkss 'tmux kill-server'
 
 	fzf --fish | source
+	zoxide init fish | source
 end

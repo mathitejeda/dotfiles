@@ -148,7 +148,3 @@
 (add-hook! org-mode (setq display-line-numbers nil))
 (add-hook! prog-mode (setq display-line-numbers 'relative))
 (set-face-attribute 'org-table nil  :inherit 'fixed-pitch)
-
-;; Opcional: fuente proporcional para texto org (más estético)
-(set-face-attribute 'variable-pitch nil :family "Cantarell" :height 160)
-(set-face-attribute 'fixed-pitch nil :family "FiraCode Nerd Font" :height 140)
