@@ -92,3 +92,7 @@ vim.keymap.set("n", "<leader>f", vim.lsp.buf.format)
 
 -- mini files
 vim.keymap.set("n", "<leader>of", "<cmd>lua MiniFiles.open()<CR>", { desc = "mini files" })
+
+
+-- guardar
+vim.keymap.set({ "i", "x", "n", "s" }, "<C-s>", "<cmd>w<cr><esc>", { desc = "Save File" })
