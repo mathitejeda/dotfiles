@@ -1,3 +1,15 @@
+# Entorno: va fuera de is-interactive para que también lo vean
+# scripts y programas lanzados desde fish (no solo la terminal).
+set -gx EDITOR nvim
+set -gx VISUAL nvim
+set -gx GOPATH $HOME/go
+set -gx PNPM_HOME $HOME/.local/share/pnpm
+
+# fish_add_path ignora carpetas que no existen y no duplica entradas.
+# -g: global (no ensucia fish_variables), -a: agrega al final.
+fish_add_path -g -a $HOME/.local/bin $GOPATH/bin $HOME/.opencode/bin $HOME/.fly/bin $HOME/.config/emacs/bin
+fish_add_path -g $PNPM_HOME/bin
+
 if status is-interactive
     # Commands to run in interactive sessions can go here
 	set -g fish_greeting "
@@ -19,14 +31,6 @@ if status is-interactive
 	"
 	set -g fish_key_bindings fish_vi_key_bindings
 
-	# add gopath
-	set -gx EDITOR nvim
-	set -x GOPATH $HOME/go
-	set -x DOOM $HOME/.config/emacs/bin
-	set -x PATH $PATH $GOPATH/bin
-	set -x PATH $PATH $HOME/.opencode/bin
-	set -x PATH $PATH $HOME/.fly/bin
-
 	#tmux abbrs
 	abbr tl 'tmux ls'
 	abbr ta 'tmux attach -t'
@@ -37,6 +41,7 @@ if status is-interactive
 	# de cagon
 	abbr rm 'rm -i'
 
-	fzf --fish | source
-	zoxide init fish | source
+	# solo si están instalados, así no tira error en una máquina nueva
+	command -q fzf; and fzf --fish | source
+	command -q zoxide; and zoxide init fish | source
 end

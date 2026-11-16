@@ -20,7 +20,7 @@ install-packages:
 		sudo pacman -S --noconfirm $(PACMAN_PACKAGES); \
 	elif command -v dnf >/dev/null 2>&1; then \
 		sudo dnf update && \
-		sudo dnf install -y $(DNF_PACKAGES) \
+		sudo dnf install -y $(DNF_PACKAGES); \
 	else \
 		echo "Gestor de paquetes no soportado"; \
 		exit 1; \
@@ -64,7 +64,7 @@ link-config-doom:
 clean:
 	@echo "Limpiando enlaces simbólicos..."
 	rm -f $(CONFIG_DIR)/nvim $(CONFIG_DIR)/fish $(CONFIG_DIR)/kitty $(CONFIG_DIR)/waybar $(CONFIG_DIR)/hypr
-	rm -f $(HOME)/.tmux
+	rm -f $(HOME)/.tmux.conf $(HOME)/.doom.d
 
 # Regenerar todo (instalar paquetes, configurar y enlazar archivos)
 all: install-packages install-tmux-plugins link-config-nvim link-config-fish link-config-tmux link-config-kitty link-config-waybar link-config-hypr

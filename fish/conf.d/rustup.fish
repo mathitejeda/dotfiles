@@ -1,1 +1,2 @@
-source "$HOME/.cargo/env.fish"
+# Solo si rustup está instalado
+test -f $HOME/.cargo/env.fish; and source $HOME/.cargo/env.fish
