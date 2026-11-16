@@ -113,7 +113,7 @@
         org-hide-leading-stars t)
 
   (add-hook 'org-mode-hook #'org-modern-mode)
-  (add-hook 'org-mode-hook #'visual-line-mode)
+;;  (add-hook 'org-mode-hook #'visual-line-mode)
   (add-hook 'org-mode-hook #'variable-pitch-mode)
   (add-hook 'org-mode-hook #'org-appear-mode)
 
